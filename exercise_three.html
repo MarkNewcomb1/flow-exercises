@@ -13,7 +13,13 @@
         /*
             Todo: Print out who is winning (higher score).
         */
-        
+        if (player1Score > player2Score) {
+            console.log("Player 1 is winning!")
+        } else if (player1Score < player2Score) {
+            console.log("Player 2 is winning!");
+        } else {
+            console.log("The players are tied!");
+        }
     </script>
 </body>
 </html>

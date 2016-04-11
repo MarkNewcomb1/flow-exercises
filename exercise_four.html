@@ -23,25 +23,25 @@
         
         
         //Player One
-        var score = 193;
-        var last_play = "Q";
-        var broom = "handle";
-        var has_ball = false;
-        var is_in_tree = false;
-        var crying = false;
+//        var score = 193;
+//        var last_play = "Q";
+//        var broom = "handle";
+//        var has_ball = false;
+//        var is_in_tree = false;
+//        var crying = false;
         
         
-        /*
+
         //Player Two
-        var score = 394;
-        var last_play = "W";
-        var broom = "none";
-        var has_ball = true;
-        var is_in_tree = true;
-        var crying = false;
-        */
+//        var score = 394;
+//        var last_play = "W";
+//        var broom = "none";
+//        var has_ball = true;
+//        var is_in_tree = true;
+//        var crying = false;
+
         
-        /*
+        
         //Player Three
         var score = "f";
         var last_play = 1.5;
@@ -49,12 +49,43 @@
         var has_ball = true;
         var is_in_tree = false;
         var crying = true;
-        */
+        
         
         if (typeof(score) != "number") {
             score = 500;
         }
+        if (crying == true) {
+            score -= 300;
+        } else if (crying == false) {
+            score += 50;
+        }
         
+        if (last_play == "Q") {
+            score -= 77;
+        }
+        
+        if (is_in_tree == true && typeof(last_play) != "number") {
+            score += 395;
+        }
+        
+        if (broom == "brush") {
+            score = score * 3;
+        } else if (broom == "handle") {
+            score = score * 2;
+        } else {
+            score = score / 2;
+        }
+        
+        if (crying == false) {
+        
+            if (is_in_tree == false && has_ball == true) {
+                score = score * 1.5;
+            }
+        }
+        
+        if (typeof(last_play) == "number") {
+            score = score * last_play;
+        }
         console.log(score);
 
     </script>
